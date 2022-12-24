@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form th:action="@{/customers/find}" method="post">
+  <input type="text" name="name" placeholder="Nhập tên tìm kiếm">
+  <button type="submit">Find</button>
+</form>
+<h1><a th:href="@{/customers/createForm}"> Add Customer</a></h1>
+<h1 th:text="${cookieTest.value}"></h1>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>FistName</th>
+    <th>Last Name</th>
+    <th>Giới tính</th>
+  </tr>
+  <tr th:each="c, cs : ${customers}">
+    <td th:text="${cs.count}"></td>
+    <td th:text="${c.firstName}"></td>
+    <td th:text="${c.lastName}"></td>
+   <td  th:text="${c.gender.name}">
+    <td> <a th:href="@{/customers/delete/__${c.id}__}">Delete</a></td>
+    <td> <a th:href="@{/customers/edit/__${c.id}__}">Edit</a></td>
+   <td>
+  </tr>
+</table>
+</body>
+</html>
