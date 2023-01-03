@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="I18N:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>I18N</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="I18N-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="I18N:war exploded" />
+    </root>
+  </artifact>
+</component>
